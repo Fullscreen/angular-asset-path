@@ -5,12 +5,22 @@ angular.module('asset-path', [])
 
   return {
     setAssets: function(newAssets) {
-      assets = newAssets
+      if (!(newAssets instanceof Object)) {
+        throw new Error("Argument is not of type Object")
+        return
+      }
+
+      // Accept either a full Rails manifest.json, or map of asset names
+      if (newAssets.assets) {
+        assets = newAssets.assets
+      } else {
+        assets = newAssets
+      }
     },
 
     $get: function() {
       return function(filename) {
-        return 'assets/'+(assets[filename] || filename)
+        return '/assets/'+(assets[filename] || filename)
       }
     },
 
@@ -32,14 +42,3 @@ angular.module('asset-path', [])
   }
 })
 
-
-
-/*
-
-
-
-<img asset-path="assets/foo">
-<div ng-style="{background-image: 'assets/foo' | asset-path }">
-
-<div style="background-image: {{ asset-path('assets/foo') })
-*/

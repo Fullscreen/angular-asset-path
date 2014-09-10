@@ -25,18 +25,17 @@ files you want to link to! Enter Angular Asset Path helpers.
 
 1. Install it: `bower install --save angular-asset-path`
 2. Require it in your app: `angular.module('myApp', ['asset-path'])`
-3. Pass in your map of file names:
+3. Pass in your Rails manifest:
 
-``` javascript
-angular.module('myApp', ['asset-path']).config(function(assetPathProvider) {
-  assetPathProvider.setAssets({
-    "favicon.ico": "favicon-100469fe687f4d74b413bae819ec1eab.ico",
-    "logo.png": "logo-eb259cb6c992ce28a13b006c5d04b9ac.png",
-    "x-icon.png": "x-icon-976ccffdf27106457e11f69c8a4cf30c.png",
-    "application.js": "app-468dd170abbf92c95462ea71b3fe0c4c.js",
-    "application.css": "application-28fc51aaa619f21652fe590b908ffb7f.css"
+```
+<!-- Drop this in the bottom of /app/views/layouts/application.html.erb -->
+<script>
+  angular.module('myApp', ['asset-path']).config(function(assetPathProvider) {
+    assetPathProvider.setAssets(
+      <%= JSON.load(File.read(Dir.glob('public/assets/manifest-*.json').last)).html_safe %>
+    )
   })
-})
+</script>
 ```
 
 Now, you can link to assets using either the `asset-path` directive or filter:
@@ -48,3 +47,4 @@ Now, you can link to assets using either the `asset-path` directive or filter:
 <!-- Or you can pipe the file name through the `assetPath` filter: -->
 <img src="{{ 'logo.png' | assetPath }}" width="400">
 ```
+
