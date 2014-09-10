@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+  <title>Asset Path Demo</title>
+</head>
+
+<body>
+  <img asset-path="logo.png" width="400">
+  <img src="{{ 'logo.png' | assetPath }}" width="400">
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../index.js"></script>
+  <script>
+    angular.module('demoApp', ['asset-path']).config(function(assetPathProvider) {
+      assetPathProvider.setAssets({
+        "favicon.ico": "favicon-100469fe687f4d74b413bae819ec1eab.ico",
+        "logo.png": "logo-eb259cb6c992ce28a13b006c5d04b9ac.png",
+        "x-icon.png": "x-icon-976ccffdf27106457e11f69c8a4cf30c.png",
+        "application.js": "app-468dd170abbf92c95462ea71b3fe0c4c.js",
+        "application.css": "application-28fc51aaa619f21652fe590b908ffb7f.css"
+      })
+    })
+  </script>
+</body>
+</html>
+
