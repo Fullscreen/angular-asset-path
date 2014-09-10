@@ -5,7 +5,7 @@
     "Paul Sweeney <paul@8-bitdesign.com>"
   ],
   "description": "Asset path helpers for Angular",
-  "main": "index.js",
+  "main": "index.min.js",
   "moduleType": [
     "globals"
   ],
@@ -18,9 +18,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "gulpfile.js",
+    "karma.*",
+    "package.json"
   ],
   "dependencies": {
     "angular": ">1.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": ">1.2.0"
   }
 }

@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/Fullscreen/angular-asset-path",
   "dependencies": {
-    "gulp-ng-annotate": "^0.3.0",
-    "gulp-uglify": "^0.3.1",
+    "gulp": "^3.8.8",
+    "gulp-ng-annotate": "^0.3.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.2",
     "karma": "0.12.16",
     "karma-jasmine": "0.1.5",
     "karma-phantomjs-launcher": "0.1.4"
