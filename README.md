@@ -32,7 +32,7 @@ files you want to link to! Enter Angular Asset Path helpers.
 <script>
   angular.module('myApp', ['asset-path']).config(function(assetPathProvider) {
     assetPathProvider.setAssets(
-      <%= File.read(Dir.glob('public/assets/manifest-*.json').last).html_safe %>
+      <%= File.read(Dir.glob('public/assets/manifest-*.json').last).html_safe rescue "{}" %>
     )
   })
 </script>
