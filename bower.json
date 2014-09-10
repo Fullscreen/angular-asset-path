@@ -1,0 +1,23 @@
+{
+  "name": "angular-asset-path",
+  "version": "0.0.0",
+  "authors": [
+    "Paul Sweeney <paul@8-bitdesign.com>"
+  ],
+  "description": "Asset path helpers for Angular",
+  "main": "index.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
