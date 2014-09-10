@@ -14,7 +14,7 @@ to your assets normally:
 renamed to `foo-eb259cb6c992ce28a13b006c5d04b9ac.jpg`! -->
 <img src="foo.jpg">
 
-<-- This writes the correct URL -->
+<!-- This writes the correct URL -->
 <img src="<%= asset-path('foo.jpg') %>">
 ```
 
@@ -27,7 +27,7 @@ files you want to link to! Enter Angular Asset Path helpers.
 2. Require it in your app: `angular.module('myApp', ['asset-path'])`
 3. Pass in your map of file names:
 
-``` html
+``` javascript
 angular.module('myApp', ['asset-path']).config(function(assetPathProvider) {
   assetPathProvider.setAssets({
     "favicon.ico": "favicon-100469fe687f4d74b413bae819ec1eab.ico",
@@ -41,7 +41,7 @@ angular.module('myApp', ['asset-path']).config(function(assetPathProvider) {
 
 Now, you can link to assets using either the `asset-path` directive or filter:
 
-``` html`
+``` html
 <!-- The `asset-path` directive will create a `src` attribute on the element: -->
 <img asset-path="logo.png" width="400">
 
