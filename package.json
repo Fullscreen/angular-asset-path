@@ -18,7 +18,7 @@
     "url": "https://github.com/Fullscreen/angular-asset-path/issues"
   },
   "homepage": "https://github.com/Fullscreen/angular-asset-path",
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-ng-annotate": "^0.3.1",
     "gulp-rename": "^1.2.0",
