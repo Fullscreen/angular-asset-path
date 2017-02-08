@@ -2,6 +2,7 @@ angular.module('asset-path', [])
 
 .provider('assetPath', function() {
   var assets = {}
+  var urlBase = ''
 
   return {
     setAssets: function(newAssets) {
@@ -18,9 +19,16 @@ angular.module('asset-path', [])
       }
     },
 
+    setUrlBase: function(newUrl) {
+      if (newUrl.lastIndexOf('/') == newUrl.length - 1) {
+        newUrl = newUrl.substr(0, newUrl.length - 1)
+      }
+      urlBase = newUrl
+    },
+
     $get: function() {
       return function(filename) {
-        return '/assets/'+(assets[filename] || filename)
+        return urlBase+'/assets/'+(assets[filename] || filename)
       }
     },
 
